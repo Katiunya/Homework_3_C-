@@ -5,6 +5,29 @@
 // 12821 -> да
 // 23432 -> да
 
+void CheckPallindrom (int number) 
+{
+    if (number > 9999 && number < 100000)
+    {
+        int units = number % 10;
+        int dozens = (number / 10) % 10;
+        int hund = (number / 100) % 10;
+        int thous = (number / 1000) % 10;
+        int dozThous = number / 10000;
+
+            if (units == dozThous && dozens == thous)
+            {
+                Console.WriteLine("This is pallindrom");
+            }
+            else Console.WriteLine("This is not pallindrom");
+
+    }
+    else Console.WriteLine("This is incorrect number!");
+}
+Console.Write("Input 5digits number: ");
+int user_number = Convert.ToInt32(Console.ReadLine());
+CheckPallindrom(user_number);
+
 // Задача 21.
 // Напишите программу, которая принимает на вход координаты двух 
 // точек и находит расстояние между ними в 3D пространстве.
